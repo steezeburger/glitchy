@@ -43,11 +43,15 @@ def glitch(image):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='python jpg glitcher')
-    parser.add_argument('-s', action='store', dest='filename', help='input jpg filename')
+    parser.add_argument('-f', action='store', dest='filename', help='name of .jpg file')
+    parser.add_argument('-q', action='store', dest='quantity', help='number of times to run glitch function')
     parse_results = parser.parse_args()
 
     print(parse_results.filename)
 
-    for i in range(0,3):
-        glitched_image = glitch(parse_results.filename)
+    image_file = parse_results.filename
+    quantity = int(parse_results.quantity)
+
+    for i in range(0,quantity):
+        glitched_image = glitch(image_file)
     print glitched_image
