@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='python jpg glitcher')
     parser.add_argument('-f', action='store', dest='filename', help='name of .jpg file')
-    parser.add_argument('-q', action='store', dest='quantity', help='number of times to run glitch function')
+    parser.add_argument('-q', action='store', dest='quantity', help='number of times to run script')
     parse_results = parser.parse_args()
 
     print(parse_results.filename)
