@@ -61,10 +61,8 @@ if __name__ == '__main__':
     # this seems to get rid of excess data that was
     # creating really large file sizes and sometimes
     # causing corruption issues
-    outfile = glitched_image
-
     try:
-        Image.open(glitched_image).save(outfile)
+        Image.open(glitched_image).save(glitched_image)
         print outfile
     except IOError:
         print("cannot convert", glitched_image)
