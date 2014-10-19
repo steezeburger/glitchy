@@ -2,6 +2,7 @@ __author__ = 'js'
 
 import random
 import argparse
+from PIL import Image
 
 # creates random start and end locations
 def random_start_end(photo_data):
@@ -56,4 +57,14 @@ if __name__ == '__main__':
     image_file = parse_results.filename
     glitched_image = glitch(image_file)
 
-    print glitched_image
+    # convert to jpg (even though it's already jpg)
+    # this seems to get rid of excess data that was
+    # creating really large file sizes and sometimes
+    # causing corruption issues
+    outfile = glitched_image
+
+    try:
+        Image.open(glitched_image).save(outfile)
+        print outfile
+    except IOError:
+        print("cannot convert", glitched_image)
