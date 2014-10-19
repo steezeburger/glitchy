@@ -1,7 +1,6 @@
 __author__ = 'js'
 
 import random
-
 import argparse
 
 # creates random start and end locations
@@ -31,28 +30,30 @@ def glitch(image):
     data = image_file.read()
     image_file.close() 
 
-    # for i in range (1, random.randint(1,10)):
-    for i in range (1, 10):
-       data = splice_file(data)
+    for i in range (1, random.randint(1,10)):
+        data = splice_file(data)
 
-    image_file = open(image, 'w')
+    new_file = 'glitched_' + image
+
+    image_file = open(new_file, 'w')
     image_file.write(data)
     image_file.close
 
-    return image
+    return new_file
 
+# will run script if ran from same directory
 if __name__ == '__main__':
 
+    # argument parsing
     parser = argparse.ArgumentParser(description='python jpg glitcher')
     parser.add_argument('-f', action='store', dest='filename', help='name of .jpg file')
-    # parser.add_argument('-q', action='store', dest='quantity', default=1, help='number of times to run script. default of 1')
     parse_results = parser.parse_args()
+
 
     print(parse_results.filename)
 
+    # passes filename to glitch function
     image_file = parse_results.filename
-    # quantity = int(parse_results.quantity)
-
-    # for i in range(0,quantity):
     glitched_image = glitch(image_file)
+
     print glitched_image

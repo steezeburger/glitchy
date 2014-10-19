@@ -5,14 +5,13 @@ amount of times
 
 usage
 -----
-    glitchy.py [-h] [-f FILENAME] [-q QUANTITY]
+    glitchy.py [-h] [-f FILENAME]
 
     python jpg glitcher
 
     optional arguments:
       -h, --help   show this help message and exit
       -f FILENAME  name of .jpg file
-      -q QUANTITY  number of times to run script. default of 1
       
 example
 -------
