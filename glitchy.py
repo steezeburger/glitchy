@@ -31,7 +31,8 @@ def glitch(image):
     data = image_file.read()
     image_file.close() 
 
-    for i in range (1, random.randint(1,10)):
+    # for i in range (1, random.randint(1,10)):
+    for i in range (1, 10):
        data = splice_file(data)
 
     image_file = open(image, 'w')
@@ -44,14 +45,14 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='python jpg glitcher')
     parser.add_argument('-f', action='store', dest='filename', help='name of .jpg file')
-    parser.add_argument('-q', action='store', dest='quantity', default=1, help='number of times to run script. default of 1')
+    # parser.add_argument('-q', action='store', dest='quantity', default=1, help='number of times to run script. default of 1')
     parse_results = parser.parse_args()
 
     print(parse_results.filename)
 
     image_file = parse_results.filename
-    quantity = int(parse_results.quantity)
+    # quantity = int(parse_results.quantity)
 
-    for i in range(0,quantity):
-        glitched_image = glitch(image_file)
+    # for i in range(0,quantity):
+    glitched_image = glitch(image_file)
     print glitched_image
