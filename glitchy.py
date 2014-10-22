@@ -11,7 +11,7 @@ def random_start_end(photo_data):
 
     return start, end
 
-# copy/pastes chucnk of data addressed by random_start_end
+# copy/pastes chunk of data addressed by random_start_end
 # a random number of times
 def splice_file(photo_data):
     start, end = random_start_end(photo_data)
@@ -49,7 +49,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='python jpg glitcher')
     parser.add_argument('-f', action='store', dest='filename', help='name of .jpg file')
     parse_results = parser.parse_args()
-
 
     print(parse_results.filename)
 
