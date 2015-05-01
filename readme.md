@@ -11,11 +11,11 @@ usage
 
     optional arguments:
       -h, --help   show this help message and exit
-      -f FILENAME  name of .jpg file
+      -f FILENAME  name of .jpg file to be glitched
       
 example
 -------
 
-    python glitchy.py -f foo.jpg -q 2
+    python glitchy.py -f foo.jpg
     
 Note: must be ran using Python 2.7
